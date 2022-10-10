@@ -10,6 +10,7 @@ promotionsRouter.route("/")
         res.setHeader("Content-Type", "application/json");
         res.json(promotions);
     })
+    .catch(err => next(err));
 })
 .post((req, res, next) => {
     Promotion.create(req.body)
